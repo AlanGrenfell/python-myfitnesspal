@@ -731,7 +731,7 @@ class Client(MFPBase):
 
         # Remove entries that are not within the dates specified
         for date in list(report.keys()):
-            if not upper_bound >= date >= lower_bound:
+            if not upper_bound >= date.date() >= lower_bound:
                 del report[date]
 
         return report
